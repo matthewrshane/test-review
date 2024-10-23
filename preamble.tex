@@ -1,0 +1,86 @@
+\documentclass[letterpaper]{article}
+
+% Packages
+\usepackage{amsmath, amssymb}
+% \usepackage[toc,page]{appendix}
+% \usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[includeheadfoot, headsep=0.1in, hmargin=0.5in, vmargin=0.5in]{geometry}
+% \usepackage{graphicx}
+% \usepackage{hyperref}
+% \usepackage{listings}
+% \usepackage{listingsutf8}
+% \usepackage{lmodern}
+% \usepackage{mdframed}
+% \usepackage[super]{nth}
+% \usepackage{pxfonts}
+% \usepackage{systeme}
+% \usepackage{tikz}
+\usepackage{titlesec}
+% \usepackage{verbatim}
+% \usepackage{xcolor}
+
+% Tiks imports
+% \usetikzlibrary{trees,matrix}
+
+% Hyperlinks setup
+% \hypersetup{hidelinks, frenchlinks=true}
+
+% Custom colors
+% \definecolor{light-gray}{gray}{0.95}
+
+% Title setup
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+
+% Custom commands
+\newcommand\abs[1]{\left\lvert{} #1 \right\rvert}
+\newcommand\define[2]{\textbf{\underline{#1}} | #2}
+
+% Pseudocode algorithm definition
+% \newcommand\algorithm[5][]
+% {
+%     \begin{mdframed}[backgroundcolor=light-gray, linecolor=light-gray]
+%         \textbf{Algorithm} #2
+%         \begin{description}
+%         [labelwidth=3.5em,labelindent=2em,leftmargin=6em,topsep=0pt,
+%         itemsep=0pt,parsep=0pt]
+%             \item[Input] #3
+%             \item[Output] #4
+%         \end{description}
+%         \lstinputlisting[style=Pseudocode,morekeywords={#1}]{code/#5}
+%     \end{mdframed}
+% }
+
+% Pseudocode class definition
+% \newcommand\class[4][]
+% {
+%     \begin{mdframed}[backgroundcolor=light-gray, linecolor=light-gray]
+%         \textbf{Class} #2
+%         \begin{description}
+%         [labelwidth=3.5em,labelindent=2em,leftmargin=6em,topsep=0pt,
+%         itemsep=0pt,parsep=0pt]
+%             \item[Input] #3
+%         \end{description}
+%         \lstinputlisting[style=Pseudocode,morekeywords={#1}]{code/#4}
+%     \end{mdframed}
+% }
+
+% Custom listing styles
+% \lstdefinestyle{Pseudocode}{
+%     columns=fullflexible,
+%     mathescape=true,
+%     literate=
+%         {=}{$\leftarrow{}$}{1}
+%         {==}{$={}$}{1},
+%     morekeywords={if, then, else, for, return, to, do}
+% }
+
+% \lstdefinestyle{C_Code}{
+%     columns=fullflexible,
+%     mathescape=true,
+%     literate=,
+%     keywordstyle=\color{blue},
+%     alsoletter={&},
+%     morekeywords={void, int, const, keytype, index, index&, while, &&, if, else}
+% }
