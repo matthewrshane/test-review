@@ -7,8 +7,8 @@
 \usepackage{fancyhdr}
 \usepackage[includeheadfoot, headsep=0.1in, hmargin=0.5in, vmargin=0.5in]{geometry}
 % \usepackage{graphicx}
-% \usepackage{hyperref}
-% \usepackage{listings}
+\usepackage{hyperref}
+\usepackage{listings}
 % \usepackage{listingsutf8}
 % \usepackage{lmodern}
 % \usepackage{mathtools}
@@ -20,16 +20,13 @@
 % \usepackage{tikz}
 \usepackage{titlesec}
 % \usepackage{verbatim}
-% \usepackage{xcolor}
+\usepackage{xcolor}
 
 % Tiks imports
 % \usetikzlibrary{trees,matrix}
 
 % Hyperlinks setup
-% \hypersetup{hidelinks, frenchlinks=true}
-
-% Custom colors
-% \definecolor{light-gray}{gray}{0.95}
+\hypersetup{hidelinks, frenchlinks=true}
 
 % Title setup
 \titlespacing{\section}{0pt}{0pt}{0pt}
@@ -42,50 +39,62 @@
 \newcommand\norm[1]{\| #1 \|}
 \newcommand\matline[1]{\left(\begin{array}{ccc|c} #1 \end{array}\right)}
 
-% Pseudocode algorithm definition
-% \newcommand\algorithm[5][]
-% {
-%     \begin{mdframed}[backgroundcolor=light-gray, linecolor=light-gray]
-%         \textbf{Algorithm} #2
-%         \begin{description}
-%         [labelwidth=3.5em,labelindent=2em,leftmargin=6em,topsep=0pt,
-%         itemsep=0pt,parsep=0pt]
-%             \item[Input] #3
-%             \item[Output] #4
-%         \end{description}
-%         \lstinputlisting[style=Pseudocode,morekeywords={#1}]{code/#5}
-%     \end{mdframed}
-% }
+% custom colors
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{HTML}{C42043}
+\definecolor{backcolor}{HTML}{F2F2F2}
 
-% Pseudocode class definition
-% \newcommand\class[4][]
-% {
-%     \begin{mdframed}[backgroundcolor=light-gray, linecolor=light-gray]
-%         \textbf{Class} #2
-%         \begin{description}
-%         [labelwidth=3.5em,labelindent=2em,leftmargin=6em,topsep=0pt,
-%         itemsep=0pt,parsep=0pt]
-%             \item[Input] #3
-%         \end{description}
-%         \lstinputlisting[style=Pseudocode,morekeywords={#1}]{code/#4}
-%     \end{mdframed}
-% }
+% listings setup for code snippets
+\lstset{upquote=true}
+\lstdefinestyle{code}{
+    backgroundcolor=\color{backcolor},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codepurple},
+    numberstyle=\numberstyle,
+    stringstyle=\color{codegray},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=10pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+}
+\lstset{style=code}
 
-% Custom listing styles
-% \lstdefinestyle{Pseudocode}{
-%     columns=fullflexible,
-%     mathescape=true,
-%     literate=
-%         {=}{$\leftarrow{}$}{1}
-%         {==}{$={}$}{1},
-%     morekeywords={if, then, else, for, return, to, do}
-% }
+% custom command for left padding zeroes
+\newcommand\numberstyle[1]{%
+    \footnotesize
+    \color{codegray}%
+    \ttfamily
+    \ifnum#1<10 0\fi#1 |%
+}
 
-% \lstdefinestyle{C_Code}{
-%     columns=fullflexible,
-%     mathescape=true,
-%     literate=,
-%     keywordstyle=\color{blue},
-%     alsoletter={&},
-%     morekeywords={void, int, const, keytype, index, index&, while, &&, if, else}
-% }
+% \codefile{language}{file path}[
+%   morekeywords = {...},
+%   deletekeywords = {...}
+% ]
+\NewDocumentCommand{\codefile}{m m O{} O{}}{%
+    \lstinputlisting[
+        language=#1,
+        morekeywords={#3},
+        deletekeywords={#4},
+        framesep=8pt,
+        xleftmargin=40pt,
+        framexleftmargin=40pt,
+        frame=tb,
+        framerule=0pt
+    ]{#2}%
+}
+
+% \codeinline{language}{code}
+\NewDocumentCommand{\codeinline}{m m}{%
+    \lstinline[
+        language=#1
+    ]|#2|%
+}
