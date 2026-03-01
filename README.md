@@ -1,2 +1,7 @@
-<h1>LaTeX Template for Test Review Sheets</h1>
-This repository serves as a simple starting point for using LaTeX to create test review sheets.
+# {ABC-123}: Review Sheet for {Exam Name}
+
+Exam date: {Sunday, January 1, 20XX}
+
+Content covered: {Content, separated by commas}
+
+Notes allowed: Closed book, one page (back and front) study sheet
